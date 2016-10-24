@@ -6,6 +6,7 @@ import numpy as np
 
 MEAN_VALUE = np.array([0.48, 0.458, 0.407]).reshape((1,1,1,3))
 
+# generate noise image
 def generate_noise_image(image,noise_ratio):
     noise_image = np.random.uniform(-0.5,0.5,
             (image.shape)).astype('float32')
@@ -14,7 +15,8 @@ def generate_noise_image(image,noise_ratio):
 
 def load_image(path):
     image = scipy.misc.imread(path)
-    image = image/255.0
+# normalize to 0-1
+    image = image/255.0 
     image = np.reshape(image,((1,)+image.shape)) - MEAN_VALUE
     
     return image

@@ -18,8 +18,10 @@ class Model:
             logging.error('please inp ut model file')
         if not os.path.isfile(model_file):
             logging.error(('model file is not exist:'), model_file)
+# load VGG19 model parameter
         self.param_dict = np.load(model_file).item()
         print('model file loaded')
+# set layer weight of style loss
         self.STYLE_LAYERS = [
                     ('conv1_1', 1.0),
                     ('conv2_1', 1.0), 
@@ -112,9 +114,10 @@ class Model:
             A = _gram_matrix(a,M,N)
             G = _gram_matrix(x,M,N)
             return (1/(4*N*N*M*M))*tf.reduce_sum(tf.pow(G-A,2))
-
+# compute layerwised loss 
         E = [_style_loss(sess.run(self.graph[layer_name]),self.graph[layer_name]) for layer_name,_ in self.STYLE_LAYERS]
         W = [w for _,w in self.STYLE_LAYERS]
+# add layerwised loss by weight
         loss = sum([ W[i]*E[i] for i in range(len(self.STYLE_LAYERS)) ])
         return loss
 
