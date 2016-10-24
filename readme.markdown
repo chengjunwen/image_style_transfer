@@ -22,8 +22,3 @@ content_image 和 style image :
 output:  	
 <p><img src="http://i1156.photobucket.com/albums/p568/chengjunwen/image%20style%20transfer/2_1_zpswyz5oqpj.png" width=300 height=200></p>  
 
-#alpha:beta = 3:100
-#content_image 和 style image :       
-#<p><img src="" width="300" height="200"><img src="" height="200" width="300"></p>  
-#output:  	
-#<p><img src="" width=300 height=200></p> 	  
