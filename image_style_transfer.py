@@ -2,7 +2,7 @@ from IST_model import *
 from load_image import *
 
 # conrent image path, style image path
-CONTENT_IMAGE_PATH ='./data/resized_lss1.jpg' 
+CONTENT_IMAGE_PATH ='./data/resized_content1.jpg' 
 STYLE_IMAGE_PATH = './data/resized_style3.jpg'
 
 # vgg19 model parameter
@@ -11,10 +11,10 @@ VGG_MODEL_PATH = './data/vgg19.npy'
 # generated image save path
 SAVE_PATH = './result/'
 # train epochs
-EPOCHS = 1000
+EPOCHS = 5000
 
 # content loss and style loss ratio
-ALPHA = 1
+ALPHA = 3
 BETA = 100
 
 
