@@ -10,9 +10,7 @@ requirement:
 eg. `python image_style_transfer.py`
 
 example：  
-content_image:
-![contentimage](http://i1156.photobucket.com/albums/p568/chengjunwen/image%20style%20transfer/resized_content1_zpsj53o8ogq.jpg)
-style_image:
-![styleimage](http://i1156.photobucket.com/albums/p568/chengjunwen/image%20style%20transfer/resized_stylehh_zpskjo0hdyl.jpg)  
+content_image 和 style image :       
+<p><img src="http://i1156.photobucket.com/albums/p568/chengjunwen/image%20style%20transfer/resized_content1_zpsj53o8ogq.jpg" width="300" height="200"><img src="http://i1156.photobucket.com/albums/p568/chengjunwen/image%20style%20transfer/resized_stylehh_zpskjo0hdyl.jpg" height="200" width="300"></p>  
 output:  	
-![](http://i1156.photobucket.com/albums/p568/chengjunwen/image%20style%20transfer/mixed_image_5000_zps9o7uxqpm.png)
+<p><img src="http://i1156.photobucket.com/albums/p568/chengjunwen/image%20style%20transfer/mixed_image_5000_zps9o7uxqpm.png" width=300 height=300></p>
