@@ -7,9 +7,8 @@ requirement:
 2. cuda, cudnn 加速训练   
 3. VGG19 model parameter，训练好了的VGG19 model 的参数  
 
-模型训练参数调整大部分在 `image _style_transfer.py`  
-另外需要在`IST_model.py`里面设置 image_width 和image_height。
-eg. `python image_style_transfer.py`
+模型训练参数调整大部分在 `image _style_transfer.py`    
+eg. `python image_style_transfer.py`  
 
 example：  
 alpha:beta = 1:100
