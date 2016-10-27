@@ -11,7 +11,7 @@ import tensorflow as tf
 import numpy as np
 
 class Model:
-    def __init__(self,model_file):
+    def __init__(self,model_file, height,width):
         if model_file is None:
             logging.error('please inp ut model file')
         if not os.path.isfile(model_file):
@@ -26,8 +26,8 @@ class Model:
                     ('conv3_1', 1.0), 
                     ('conv4_1', 1.0), 
                     ('conv5_1', 1.0) ]
-        self.IMAGE_HEIGHT = 400
-        self.IMAGE_WIDTH = 600
+        self.IMAGE_HEIGHT = height
+        self.IMAGE_WIDTH = width
         self.graph={}
 
 # get fiter and bias parameter, set untrainable
@@ -120,7 +120,7 @@ class Model:
         return loss
 
 # optimizer
-    def optimizerImage(self,total_loss):
-        self.optimizer = tf.train.AdamOptimizer(0.01).minimize(total_loss)
+    def optimizerImage(self,total_loss, lr):
+        self.optimizer = tf.train.AdamOptimizer(lr).minimize(total_loss)
         return self.optimizer
 

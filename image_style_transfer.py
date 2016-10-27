@@ -3,8 +3,9 @@ from load_image import *
 
 # conrent image path, style image path
 CONTENT_IMAGE_PATH ='./data/resized_content1.jpg' 
-STYLE_IMAGE_PATH = './data/resized_style3.jpg'
-
+STYLE_IMAGE_PATH = './data/resized_stylehh.jpg'
+IMAGE_HEIGHT=400
+IMAGE_WIDTH=600
 # vgg19 model parameter
 VGG_MODEL_PATH = './data/vgg19.npy'
 
@@ -17,6 +18,7 @@ EPOCHS = 5000
 ALPHA = 3
 BETA = 100
 
+learning_rate = 0.01
 
 
 def get_style_transfer_image():
@@ -25,7 +27,7 @@ def get_style_transfer_image():
     content_image = load_image(CONTENT_IMAGE_PATH)
     style_image = load_image(STYLE_IMAGE_PATH)
     input_image = generate_noise_image(content_image,0.6)
-    model = Model(VGG_MODEL_PATH)
+    model = Model(VGG_MODEL_PATH,IMAGE_HEIGHT,IMAGE_WIDTH)
     model.constructModel()
 
     with tf.Session() as sess:
@@ -38,7 +40,7 @@ def get_style_transfer_image():
         style_loss = model.get_style_loss(sess)
 # define loss and optimizer 
         total_loss = ALPHA * content_loss + BETA * style_loss
-        optimizer= model.optimizerImage(total_loss)
+        optimizer= model.optimizerImage(total_loss,learning_rate)
 # set input image(noise image)    
         init = tf.initialize_all_variables()
         sess.run(init)
