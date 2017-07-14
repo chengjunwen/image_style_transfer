@@ -24,8 +24,8 @@ class Model:
                     ('conv1_1', 1.0),
                     ('conv2_1', 1.0), 
                     ('conv3_1', 1.0), 
-                    ('conv4_1', 1.0), 
-                    ('conv5_1', 1.0) ]
+                    ('conv4_1', 1.5), 
+                    ('conv5_1', 1.5) ]
         self.IMAGE_HEIGHT = height
         self.IMAGE_WIDTH = width
         self.graph={}
@@ -98,19 +98,19 @@ class Model:
             M = p.shape[1] * p.shape[2]
             N = p.shape[3]
             return (1/(2*M*N)) * tf.reduce_sum(tf.pow(x-p,2))
-        return _content_loss(sess.run(self.graph['conv4_2']), self.graph['conv4_2'])
+        return _content_loss(sess.run(self.graph['conv4_1']), self.graph['conv4_1'])
 
 # get style loss
     def get_style_loss(self,sess):
 
-        def _gram_matrix(F, M, N):
+        def _g_matrix(F, M, N):
             Ft = tf.reshape(F,(M,N))
             return tf.matmul(tf.transpose(Ft),Ft)
         def _style_loss(a,x):
             M = a.shape[1]*a.shape[2]
             N = a.shape[3]
-            A = _gram_matrix(a,M,N)
-            G = _gram_matrix(x,M,N)
+            A = _g_matrix(a,M,N)
+            G = _g_matrix(x,M,N)
             return (1/(4*N*N*M*M))*tf.reduce_sum(tf.pow(G-A,2))
 # compute layerwised loss 
         E = [_style_loss(sess.run(self.graph[layer_name]),self.graph[layer_name]) for layer_name,_ in self.STYLE_LAYERS]

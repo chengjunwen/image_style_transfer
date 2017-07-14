@@ -3,7 +3,7 @@ from load_image import *
 
 # conrent image path, style image path
 CONTENT_IMAGE_PATH ='./data/resized_content1.jpg' 
-STYLE_IMAGE_PATH = './data/resized_stylehh.jpg'
+STYLE_IMAGE_PATH = './data/resized_style1.jpg'
 IMAGE_HEIGHT=400
 IMAGE_WIDTH=600
 # vgg19 model parameter
@@ -15,7 +15,7 @@ SAVE_PATH = './result/'
 EPOCHS = 5000
 
 # content loss and style loss ratio
-ALPHA = 3
+ALPHA = 1
 BETA = 100
 
 learning_rate = 0.01
