@@ -13,11 +13,11 @@ eg. `python image_style_transfer.py`
 example：  
 alpha:beta = 1:100
 content_image 和 style image :       
-<p><img src="http://i1156.photobucket.com/albums/p568/chengjunwen/image%20style%20transfer/resized_content1_zpsj53o8ogq.jpg" width="300" height="200"><img src="http://i1156.photobucket.com/albums/p568/chengjunwen/image%20style%20transfer/resized_stylehh_zpskjo0hdyl.jpg" height="200" width="300"></p>  
+<p><img src="images//resized_stylehh.jpg" height="200" width="300"></p>  
 output:  	
-<p><img src="http://i1156.photobucket.com/albums/p568/chengjunwen/image%20style%20transfer/mixed_image_5000_zps9o7uxqpm.png" width=300 height=200></p>   
+<p><img src="images//mixed_image_5000.png" width=300 height=200></p>   
 content_image 和 style image :       
-<p><img src="http://i1156.photobucket.com/albums/p568/chengjunwen/image%20style%20transfer/resized_content1_zpsj53o8ogq.jpg" width="300" height="200"><img src="http://i1156.photobucket.com/albums/p568/chengjunwen/image%20style%20transfer/resized_style3_zpsftnh3fi4.jpg" height="200" width="300"></p>  
+<p><img src="images//resized_style3.jpg" height="200" width="300"></p>  
 output:  	
-<p><img src="http://i1156.photobucket.com/albums/p568/chengjunwen/image%20style%20transfer/2_1_zpswyz5oqpj.png" width=300 height=200></p>  
+<p><img src="images//2_1.png" width=300 height=200></p>  
 
